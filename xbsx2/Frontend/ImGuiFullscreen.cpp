@@ -31,7 +31,7 @@
 #include "fmt/core.h"
 #include "HostDisplay.h"
 #include "imgui_internal.h"
-#include "imgui_stdlib.h"							
+#include "imgui_stdlib.h"						
 #include <array>
 #include <cmath>
 #include <deque>
@@ -48,7 +48,7 @@ namespace ImGuiFullscreen
 
 	static void DrawFileSelector();
 	static void DrawChoiceDialog();
-	// static void DrawInputDialog();
+	static void DrawInputDialog();
 	static void DrawMessageDialog();
 	static void DrawBackgroundProgressDialogs(ImVec2& position, float spacing);
 	static void DrawNotifications(ImVec2& position, float spacing);
@@ -111,7 +111,6 @@ namespace ImGuiFullscreen
 	static std::string s_input_dialog_title;
 	static std::string s_input_dialog_message;
 	static std::string s_input_dialog_caption;
-	static std::string s_input_dialog_text;
 	static std::string s_input_dialog_ok_text;
 	static InputStringDialogCallback s_input_dialog_callback;
 
@@ -481,7 +480,7 @@ void ImGuiFullscreen::EndLayout()
 {
 	DrawFileSelector();
 	DrawChoiceDialog();
-	// DrawInputDialog();
+	DrawInputDialog();
 	DrawMessageDialog();
 
 	const float notification_margin = LayoutScale(10.0f);
@@ -1892,73 +1891,78 @@ void ImGuiFullscreen::OpenInputStringDialog(
 	s_input_dialog_callback = std::move(callback);
 }
 
-//  void ImGuiFullscreen::DrawInputDialog()
-//  {
-//  	if (!s_input_dialog_open)
-//  		return;
-//  
-//  	ImGui::SetNextWindowSize(LayoutScale(700.0f, 0.0f));
-//  	ImGui::SetNextWindowPos(ImGui::GetIO().DisplaySize * 0.5f, ImGuiCond_Always, ImVec2(0.5f, 0.5f));
-//  	ImGui::OpenPopup(s_input_dialog_title.c_str());
-//  
-//  	ImGui::PushFont(g_large_font);
-//  	ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, LayoutScale(10.0f));
-//  	ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, LayoutScale(LAYOUT_MENU_BUTTON_X_PADDING, LAYOUT_MENU_BUTTON_Y_PADDING));
-//  	ImGui::PushStyleColor(ImGuiCol_Text, UIPrimaryTextColor);
-//  	ImGui::PushStyleColor(ImGuiCol_TitleBg, UIPrimaryDarkColor);
-//  	ImGui::PushStyleColor(ImGuiCol_TitleBgActive, UIPrimaryColor);
-//  	ImGui::PushStyleColor(ImGuiCol_PopupBg, MulAlpha(UIBackgroundColor, 0.95f));
-//  
-//  	bool is_open = true;
-//  	if (ImGui::BeginPopupModal(s_input_dialog_title.c_str(), &is_open,
-//  			ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove))
-//  	{
-//  		ImGui::TextWrapped("%s", s_input_dialog_message.c_str());
-//  
-//  		BeginMenuButtons();
-//  
-//  		ImGui::SetCursorPosY(ImGui::GetCursorPosY() + LayoutScale(10.0f));
-//  
-//  		if (!s_input_dialog_caption.empty())
-//  		{
-//  			const float prev = ImGui::GetCursorPosX();
-//  			ImGui::TextUnformatted(s_input_dialog_caption.c_str());
-//  			ImGui::SetNextItemWidth(ImGui::GetCursorPosX() - prev);
-//  		}
-//  		else
-//  		{
-//  			ImGui::SetNextItemWidth(ImGui::GetCurrentWindow()->WorkRect.GetWidth());
-//  		}
-//  		ImGui::InputText("##input", &s_input_dialog_text);
-//  		ImGui::SetCursorPosY(ImGui::GetCursorPosY() + LayoutScale(10.0f));
-//  		const bool ok_enabled = !s_input_dialog_text.empty();
-//  
-//  		if (ActiveButton(s_input_dialog_ok_text.c_str(), false, ok_enabled) && ok_enabled)
-//  		{
-//  			// have to move out in case they open another dialog in the callback
-//  			InputStringDialogCallback cb(std::move(s_input_dialog_callback));
-//  			std::string text(std::move(s_input_dialog_text));
-//  			CloseInputDialog();
-//  			ImGui::CloseCurrentPopup();
-//  			cb(std::move(text));
-//  		}
-//  
-//  		if (ActiveButton(ICON_FA_TIMES " Cancel", false))
-//  		{
-//  			CloseInputDialog();
-//  			ImGui::CloseCurrentPopup();
-//  		}
-//  
-//  		EndMenuButtons();
-//  		ImGui::EndPopup();
-//  	}
-//  	if (!is_open)
-//  		CloseInputDialog();
-//  
-//  	ImGui::PopStyleColor(4);
-//  	ImGui::PopStyleVar(2);
-//  	ImGui::PopFont();
-//  }
+void ImGuiFullscreen::DrawInputDialog()
+{
+	if (!s_input_dialog_open)
+		return;
+
+	ImGui::SetNextWindowSize(LayoutScale(700.0f, 0.0f));
+	ImGui::SetNextWindowPos(ImGui::GetIO().DisplaySize * 0.5f, ImGuiCond_Always, ImVec2(0.5f, 0.5f));
+	ImGui::OpenPopup(s_input_dialog_title.c_str());
+
+	ImGui::PushFont(g_large_font);
+	ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, LayoutScale(10.0f));
+	ImGui::PushStyleVar(ImGuiStyleVar_FramePadding, LayoutScale(LAYOUT_MENU_BUTTON_X_PADDING, LAYOUT_MENU_BUTTON_Y_PADDING));
+	ImGui::PushStyleColor(ImGuiCol_Text, UIPrimaryTextColor);
+	ImGui::PushStyleColor(ImGuiCol_TitleBg, UIPrimaryDarkColor);
+	ImGui::PushStyleColor(ImGuiCol_TitleBgActive, UIPrimaryColor);
+	ImGui::PushStyleColor(ImGuiCol_PopupBg, MulAlpha(UIBackgroundColor, 0.95f));
+
+	bool is_open = true;
+	if (ImGui::BeginPopupModal(s_input_dialog_title.c_str(), &is_open,
+			ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove))
+	{
+		ImGui::TextWrapped("%s", s_input_dialog_message.c_str());
+
+		BeginMenuButtons();
+
+		ImGui::SetCursorPosY(ImGui::GetCursorPosY() + LayoutScale(10.0f));
+
+		if (!s_input_dialog_caption.empty())
+		{
+			const float prev = ImGui::GetCursorPosX();
+			ImGui::TextUnformatted(s_input_dialog_caption.c_str());
+			ImGui::SetNextItemWidth(ImGui::GetCursorPosX() - prev);
+		}
+		else
+		{
+			ImGui::SetNextItemWidth(ImGui::GetCurrentWindow()->WorkRect.GetWidth());
+		}
+		static char input_name[256] = {};
+		ImGui::InputText("##input", input_name, sizeof(input_name));
+
+		ImGui::SetCursorPosY(ImGui::GetCursorPosY() + LayoutScale(10.0f));
+
+		const bool ok_enabled = (std::strlen(input_name) > 0);
+
+		if (ActiveButton(s_input_dialog_ok_text.c_str(), false, ok_enabled) && ok_enabled)
+		{
+			// have to move out in case they open another dialog in the callback
+			InputStringDialogCallback cb(std::move(s_input_dialog_callback));
+			std::string text(std::move(input_name));
+			CloseInputDialog();
+			ImGui::CloseCurrentPopup();
+			cb(std::move(text));
+		}
+
+		if (ActiveButton(ICON_FA_TIMES " Cancel", false))
+		{
+			CloseInputDialog();
+
+			ImGui::CloseCurrentPopup();
+		}
+
+		EndMenuButtons();
+
+		ImGui::EndPopup();
+	}
+	if (!is_open)
+		CloseInputDialog();
+
+	ImGui::PopStyleColor(4);
+	ImGui::PopStyleVar(2);
+	ImGui::PopFont();
+}
 
 void ImGuiFullscreen::CloseInputDialog()
 {
@@ -1970,7 +1974,6 @@ void ImGuiFullscreen::CloseInputDialog()
 	s_input_dialog_message = {};
 	s_input_dialog_caption = {};
 	s_input_dialog_ok_text = {};
-	s_input_dialog_text = {};
 	s_input_dialog_callback = {};
 }
 
@@ -1983,6 +1986,7 @@ void ImGuiFullscreen::OpenConfirmMessageDialog(
 	std::string title, std::string message, ConfirmMessageDialogCallback callback, std::string yes_button_text, std::string no_button_text)
 {
 	CloseMessageDialog();
+
 	s_message_dialog_open = true;
 	s_message_dialog_title = std::move(title);
 	s_message_dialog_message = std::move(message);
@@ -1995,6 +1999,7 @@ void ImGuiFullscreen::OpenInfoMessageDialog(
 	std::string title, std::string message, InfoMessageDialogCallback callback, std::string button_text)
 {
 	CloseMessageDialog();
+
 	s_message_dialog_open = true;
 	s_message_dialog_title = std::move(title);
 	s_message_dialog_message = std::move(message);
@@ -2006,6 +2011,7 @@ void ImGuiFullscreen::OpenMessageDialog(std::string title, std::string message, 
 	std::string first_button_text, std::string second_button_text, std::string third_button_text)
 {
 	CloseMessageDialog();
+
 	s_message_dialog_open = true;
 	s_message_dialog_title = std::move(title);
 	s_message_dialog_message = std::move(message);
@@ -2019,6 +2025,7 @@ void ImGuiFullscreen::CloseMessageDialog()
 {
 	if (!s_message_dialog_open)
 		return;
+
 	s_message_dialog_open = false;
 	s_message_dialog_title = {};
 	s_message_dialog_message = {};
@@ -2030,10 +2037,13 @@ void ImGuiFullscreen::DrawMessageDialog()
 {
 	if (!s_message_dialog_open)
 		return;
+
 	const char* win_id = s_message_dialog_title.empty() ? "##messagedialog" : s_message_dialog_title.c_str();
+
 	ImGui::SetNextWindowSize(LayoutScale(700.0f, 0.0f));
 	ImGui::SetNextWindowPos(ImGui::GetIO().DisplaySize * 0.5f, ImGuiCond_Always, ImVec2(0.5f, 0.5f));
 	ImGui::OpenPopup(win_id);
+
 	ImGui::PushFont(g_large_font);
 	ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, LayoutScale(20.0f, 20.0f));
 	ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, LayoutScale(10.0f));
@@ -2042,10 +2052,12 @@ void ImGuiFullscreen::DrawMessageDialog()
 	ImGui::PushStyleColor(ImGuiCol_TitleBg, UIPrimaryDarkColor);
 	ImGui::PushStyleColor(ImGuiCol_TitleBgActive, UIPrimaryColor);
 	ImGui::PushStyleColor(ImGuiCol_PopupBg, MulAlpha(UIBackgroundColor, 0.95f));
+
 	bool is_open = true;
 	const u32 flags = ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
 					  (s_message_dialog_title.empty() ? ImGuiWindowFlags_NoTitleBar : 0);
 	std::optional<s32> result;
+
 	if (ImGui::BeginPopupModal(win_id, &is_open, flags))
 	{
 		BeginMenuButtons();
@@ -2061,12 +2073,16 @@ void ImGuiFullscreen::DrawMessageDialog()
 				ImGui::CloseCurrentPopup();
 			}
 		}
+
 		EndMenuButtons();
+
 		ImGui::EndPopup();
 	}
+
 	ImGui::PopStyleColor(4);
 	ImGui::PopStyleVar(3);
 	ImGui::PopFont();
+
 	if (!is_open || result.has_value())
 	{
 		// have to move out in case they open another dialog in the callback
@@ -2088,8 +2104,8 @@ void ImGuiFullscreen::DrawMessageDialog()
 	}
 }
 
-static float s_notification_vertical_position = 0.3f;
-static float s_notification_vertical_direction = -1.0f;
+static float s_notification_vertical_position = 0.15f;
+static float s_notification_vertical_direction = 1.0f;
 
 float ImGuiFullscreen::GetNotificationVerticalPosition()
 {
@@ -2202,16 +2218,29 @@ void ImGuiFullscreen::DrawBackgroundProgressDialogs(ImVec2& position, float spac
 		dl->AddText(g_medium_font, g_medium_font->FontSize, pos, IM_COL32(255, 255, 255, 255), data.message.c_str(), nullptr, 0.0f);
 		pos.y += g_medium_font->FontSize + LayoutScale(10.0f);
 
-		ImVec2 bar_end(pos.x + window_width - LayoutScale(10.0f * 2.0f), pos.y + LayoutScale(25.0f));
-		float fraction = static_cast<float>(data.value - data.min) / static_cast<float>(data.max - data.min);
-		dl->AddRectFilled(pos, bar_end, ImGui::GetColorU32(UIPrimaryDarkColor));
-		dl->AddRectFilled(pos, ImVec2(pos.x + fraction * (bar_end.x - pos.x), bar_end.y), ImGui::GetColorU32(UISecondaryColor));
+		const ImVec2 box_end(pos.x + window_width - LayoutScale(10.0f * 2.0f), pos.y + LayoutScale(25.0f));
+		dl->AddRectFilled(pos, box_end, ImGui::GetColorU32(UIPrimaryDarkColor));
 
-		const std::string text(fmt::format("{}%", static_cast<int>(std::round(fraction * 100.0f))));
-		const ImVec2 text_size(ImGui::CalcTextSize(text.c_str()));
-		const ImVec2 text_pos(
-			pos.x + ((bar_end.x - pos.x) / 2.0f) - (text_size.x / 2.0f), pos.y + ((bar_end.y - pos.y) / 2.0f) - (text_size.y / 2.0f));
-		dl->AddText(g_medium_font, g_medium_font->FontSize, text_pos, ImGui::GetColorU32(UIPrimaryTextColor), text.c_str());
+		if (data.min != data.max)
+		{
+			const float fraction = static_cast<float>(data.value - data.min) / static_cast<float>(data.max - data.min);
+			dl->AddRectFilled(pos, ImVec2(pos.x + fraction * (box_end.x - pos.x), box_end.y), ImGui::GetColorU32(UISecondaryColor));
+
+			const std::string text(fmt::format("{}%", static_cast<int>(std::round(fraction * 100.0f))));
+			const ImVec2 text_size(ImGui::CalcTextSize(text.c_str()));
+			const ImVec2 text_pos(
+				pos.x + ((box_end.x - pos.x) / 2.0f) - (text_size.x / 2.0f), pos.y + ((box_end.y - pos.y) / 2.0f) - (text_size.y / 2.0f));
+			dl->AddText(g_medium_font, g_medium_font->FontSize, text_pos, ImGui::GetColorU32(UIPrimaryTextColor), text.c_str());
+		}
+		else
+		{
+			// indeterminate, so draw a scrolling bar
+			const float bar_width = LayoutScale(30.0f);
+			const float fraction = std::fmod(ImGui::GetTime(), 2.0f) * 0.5f;
+			const ImVec2 bar_start(pos.x + ImLerp(0.0f, box_end.x, fraction) - bar_width, pos.y);
+			const ImVec2 bar_end(std::min(bar_start.x + bar_width, box_end.x), pos.y + LayoutScale(25.0f));
+			dl->AddRectFilled(ImClamp(bar_start, pos, box_end), ImClamp(bar_end, pos, box_end), ImGui::GetColorU32(UISecondaryColor));
+		}
 
 		position.y += s_notification_vertical_direction * (window_height + spacing);
 	}

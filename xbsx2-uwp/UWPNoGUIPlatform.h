@@ -46,8 +46,6 @@ public:
 
 	void ReportError(const std::string_view& title, const std::string_view& message) override;
 
-	void SetDefaultControllerConfig(SettingsInterface& si) override;
-
 	bool CreatePlatformWindow(std::string title) override;
 	void DestroyPlatformWindow() override;
 	std::optional<WindowInfo> GetPlatformWindowInfo() override;

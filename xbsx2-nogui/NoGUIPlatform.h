@@ -32,8 +32,6 @@ public:
 	virtual void ReportError(const std::string_view& title, const std::string_view& message) = 0;
 	//virtual bool ConfirmMessage(const std::string_view& title, const std::string_view& message) = 0;
 
-	virtual void SetDefaultControllerConfig(SettingsInterface& si) = 0;
-
 	virtual bool CreatePlatformWindow(std::string title) = 0;
 	virtual void DestroyPlatformWindow() = 0;
 

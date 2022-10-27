@@ -417,57 +417,6 @@ void UWPNoGUIPlatform::EndTextInput()
 	});
 }
 
-void UWPNoGUIPlatform::SetDefaultControllerConfig(SettingsInterface& si)
-{
-	const std::string games_dir(Path::Combine(EmuFolders::DataRoot, "games"));
-	if (!FileSystem::DirectoryExists(games_dir.c_str()))
-		FileSystem::CreateDirectoryPath(games_dir.c_str(), false);
-
-	// Disable things that aren't present in UWP builds.
-	si.SetBoolValue("InputSources", "SDL", false);
-	si.SetBoolValue("InputSources", "XInput", true);
-	si.AddToStringList("GameList", "RecursivePaths", games_dir.c_str());
-
-	if (IsRunningOnXbox())
-	{
-		// For Xbox, default to DX12. Too bad if it's not in game mode.
-		si.SetIntValue("EmuCore/GS", "Renderer", static_cast<int>(GSRendererType::DX12));
-		si.SetBoolValue("EmuCore/Speedhacks", "vuThread", true);
-
-		// Map first controller.
-		si.SetStringValue("Pad1", "Type", "DualShock2");
-		si.SetStringValue("Pad1", "Up", "XInput-0/DPadUp");
-		si.SetStringValue("Pad1", "Right", "XInput-0/DPadRight");
-		si.SetStringValue("Pad1", "Down", "XInput-0/DPadDown");
-		si.SetStringValue("Pad1", "Left", "XInput-0/DPadLeft");
-		si.SetStringValue("Pad1", "Triangle", "XInput-0/Y");
-		si.SetStringValue("Pad1", "Circle", "XInput-0/B");
-		si.SetStringValue("Pad1", "Cross", "XInput-0/A");
-		si.SetStringValue("Pad1", "Square", "XInput-0/X");
-		si.SetStringValue("Pad1", "Select", "XInput-0/Back");
-		si.SetStringValue("Pad1", "Start", "XInput-0/Start");
-		si.SetStringValue("Pad1", "L1", "XInput-0/LeftShoulder");
-		si.SetStringValue("Pad1", "L2", "XInput-0/+LeftTrigger");
-		si.SetStringValue("Pad1", "R1", "XInput-0/RightShoulder");
-		si.SetStringValue("Pad1", "R2", "XInput-0/+RightTrigger");
-		si.SetStringValue("Pad1", "L3", "XInput-0/LeftStick");
-		si.SetStringValue("Pad1", "R3", "XInput-0/RightStick");
-		si.SetStringValue("Pad1", "LUp", "XInput-0/-LeftY");
-		si.SetStringValue("Pad1", "LRight", "XInput-0/+LeftX");
-		si.SetStringValue("Pad1", "LDown", "XInput-0/+LeftY");
-		si.SetStringValue("Pad1", "LLeft", "XInput-0/-LeftX");
-		si.SetStringValue("Pad1", "RUp", "XInput-0/-RightY");
-		si.SetStringValue("Pad1", "RRight", "XInput-0/+RightX");
-		si.SetStringValue("Pad1", "RDown", "XInput-0/+RightY");
-		si.SetStringValue("Pad1", "RLeft", "XInput-0/-RightX");
-		si.SetStringValue("Pad1", "SmallMotor", "XInput-0/SmallMotor");
-		si.SetStringValue("Pad1", "LargeMotor", "XInput-0/LargeMotor");
-
-		// LB+RB => Open Pause Menu.
-		si.SetStringValue("Hotkeys", "OpenPauseMenu", "XInput-0/Back & XInput-0/Start");
-	}
-}
-
 bool UWPNoGUIPlatform::CreatePlatformWindow(std::string title)
 {
 	if (!m_appview)
