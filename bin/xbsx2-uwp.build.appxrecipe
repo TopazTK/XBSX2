@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-VRFG94E</Machine>
+    <WindowsUser>TheRhysWyrill</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>Debug UWP AVX2|x64</SolutionConfiguration>
+    <PackageArchitecture>x64</PackageArchitecture>
+    <PackageIdentityName>48299TRW.XBSX2</PackageIdentityName>
+    <PackageIdentityPublisher>CN=89BBE83E-4C35-4C0B-94D8-884B460666F6</PackageIdentityPublisher>
+    <IntermediateOutputPath>D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\x64\Debug UWP AVX2\</IntermediateOutputPath>
+    <RemoteDeploymentType>CopyToDevice</RemoteDeploymentType>
+    <PackageRegistrationPath></PackageRegistrationPath>
+    <RemoveNonLayoutFiles>false</RemoveNonLayoutFiles>
+    <DeployOptionalPackages>false</DeployOptionalPackages>
+    <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
+    <LayoutDir>D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\bin\AppX</LayoutDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\bin\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\bin\xbsx2-uwpx64-avx2-dbg.exe">
+      <PackagePath>xbsx2-uwpx64-avx2-dbg.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\fonts\bold.ttf">
+      <PackagePath>resources\fonts\bold.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\fonts\fa-solid-900.ttf">
+      <PackagePath>resources\fonts\fa-solid-900.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\fonts\regular.ttf">
+      <PackagePath>resources\fonts\regular.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\cover-placeholder.png">
+      <PackagePath>resources\cover-placeholder.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\fullscreenui\address-book-new.png">
+      <PackagePath>resources\fullscreenui\address-book-new.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\fullscreenui\applications-system.png">
+      <PackagePath>resources\fullscreenui\applications-system.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\fullscreenui\media-cdrom.png">
+      <PackagePath>resources\fullscreenui\media-cdrom.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\fullscreenui\placeholder.png">
+      <PackagePath>resources\fullscreenui\placeholder.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\AppIconLarge.png">
+      <PackagePath>resources\icons\AppIconLarge.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\NTSC-B.png">
+      <PackagePath>resources\icons\flags\NTSC-B.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\NTSC-C.png">
+      <PackagePath>resources\icons\flags\NTSC-C.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\NTSC-HK.png">
+      <PackagePath>resources\icons\flags\NTSC-HK.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\NTSC-J.png">
+      <PackagePath>resources\icons\flags\NTSC-J.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\NTSC-K.png">
+      <PackagePath>resources\icons\flags\NTSC-K.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\NTSC-T.png">
+      <PackagePath>resources\icons\flags\NTSC-T.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\NTSC-U.png">
+      <PackagePath>resources\icons\flags\NTSC-U.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\Other.png">
+      <PackagePath>resources\icons\flags\Other.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-A.png">
+      <PackagePath>resources\icons\flags\PAL-A.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-AF.png">
+      <PackagePath>resources\icons\flags\PAL-AF.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-AU.png">
+      <PackagePath>resources\icons\flags\PAL-AU.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-BE.png">
+      <PackagePath>resources\icons\flags\PAL-BE.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-E.png">
+      <PackagePath>resources\icons\flags\PAL-E.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-F.png">
+      <PackagePath>resources\icons\flags\PAL-F.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-FI.png">
+      <PackagePath>resources\icons\flags\PAL-FI.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-G.png">
+      <PackagePath>resources\icons\flags\PAL-G.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-GR.png">
+      <PackagePath>resources\icons\flags\PAL-GR.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-I.png">
+      <PackagePath>resources\icons\flags\PAL-I.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-IN.png">
+      <PackagePath>resources\icons\flags\PAL-IN.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-M.png">
+      <PackagePath>resources\icons\flags\PAL-M.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-NL.png">
+      <PackagePath>resources\icons\flags\PAL-NL.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-NO.png">
+      <PackagePath>resources\icons\flags\PAL-NO.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-P.png">
+      <PackagePath>resources\icons\flags\PAL-P.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-R.png">
+      <PackagePath>resources\icons\flags\PAL-R.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-S.png">
+      <PackagePath>resources\icons\flags\PAL-S.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-SC.png">
+      <PackagePath>resources\icons\flags\PAL-SC.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-SW.png">
+      <PackagePath>resources\icons\flags\PAL-SW.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-SWI.png">
+      <PackagePath>resources\icons\flags\PAL-SWI.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\flags\PAL-UK.png">
+      <PackagePath>resources\icons\flags\PAL-UK.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\star-0.png">
+      <PackagePath>resources\icons\star-0.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\star-1.png">
+      <PackagePath>resources\icons\star-1.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\star-2.png">
+      <PackagePath>resources\icons\star-2.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\star-3.png">
+      <PackagePath>resources\icons\star-3.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\star-4.png">
+      <PackagePath>resources\icons\star-4.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\icons\star-5.png">
+      <PackagePath>resources\icons\star-5.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\LargeTile.scale-100.png">
+      <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\LargeTile.scale-125.png">
+      <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\LargeTile.scale-150.png">
+      <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\LargeTile.scale-200.png">
+      <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\LargeTile.scale-400.png">
+      <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\SmallTile.scale-100.png">
+      <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\SmallTile.scale-125.png">
+      <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\SmallTile.scale-150.png">
+      <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\SmallTile.scale-200.png">
+      <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\SmallTile.scale-400.png">
+      <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\SplashScreen.scale-125.png">
+      <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\SplashScreen.scale-150.png">
+      <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\SplashScreen.scale-400.png">
+      <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square150x150Logo.scale-125.png">
+      <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square150x150Logo.scale-150.png">
+      <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square150x150Logo.scale-200.png">
+      <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.scale-100.png">
+      <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.scale-125.png">
+      <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.scale-150.png">
+      <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.scale-200.png">
+      <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.scale-400.png">
+      <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Square44x44Logo.targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\StoreLogo.backup.png">
+      <PackagePath>Assets\StoreLogo.backup.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\StoreLogo.scale-200.png">
+      <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\StoreLogo.scale-400.png">
+      <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Wide310x150Logo.scale-100.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Wide310x150Logo.scale-125.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Wide310x150Logo.scale-150.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Wide310x150Logo.scale-200.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\Assets\Wide310x150Logo.scale-400.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\cheats_ni.zip">
+      <PackagePath>resources\cheats_ni.zip</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\cheats_ws.zip">
+      <PackagePath>resources\cheats_ws.zip</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\GameIndex.yaml">
+      <PackagePath>resources\GameIndex.yaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\shaders\common\fxaa.fx">
+      <PackagePath>resources\shaders\common\fxaa.fx</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\shaders\dx11\convert.fx">
+      <PackagePath>resources\shaders\dx11\convert.fx</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\shaders\dx11\interlace.fx">
+      <PackagePath>resources\shaders\dx11\interlace.fx</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\shaders\dx11\merge.fx">
+      <PackagePath>resources\shaders\dx11\merge.fx</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\shaders\dx11\present.fx">
+      <PackagePath>resources\shaders\dx11\present.fx</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\shaders\dx11\shadeboost.fx">
+      <PackagePath>resources\shaders\dx11\shadeboost.fx</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\xbsx2-uwp\resources\shaders\dx11\tfx.fx">
+      <PackagePath>resources\shaders\dx11\tfx.fx</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\X64\ucrtbased.dll">
+      <PackagePath>ucrtbased.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\TheRhysWyrill\Downloads\Emu Stuff\XBSX2\bin\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.30704.0</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.30704.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.30704.0</Version>
+      <Architecture>ARM64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.30704.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM64\Microsoft.VCLibs.ARM64.Debug.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.30704.0</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.30704.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
+      <Name>Microsoft.VCLibs.140.00.Debug</Name>
+      <Version>14.0.30704.0</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.30704.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.14.00.appx</AppxLocation>
+      <MoreInfo></MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

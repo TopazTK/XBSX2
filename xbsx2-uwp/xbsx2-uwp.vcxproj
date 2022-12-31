@@ -57,7 +57,7 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <TargetName>$(EXEString)</TargetName>
     <GenerateTemporaryStoreCertificate>True</GenerateTemporaryStoreCertificate>
-    <AppxPackageDir>C:\XBSX2\Builds</AppxPackageDir>
+    <AppxPackageDir>D:\TheRhysWyrill\Downloads\Emu Stuff\AppPackages\</AppxPackageDir>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
@@ -67,7 +67,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\libpng;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\simpleini\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-	  <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\imgui\include;$(SolutionDir)3rdparty\imgui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\imgui\include;$(SolutionDir)3rdparty\imgui\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories>$(ProjectDir);$(SolutionDir)xbsx2;$(SolutionDir)xbsx2-nogui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ExceptionHandling>Async</ExceptionHandling>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -202,7 +202,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <CommonDataFiles Include="$(SolutionDir)bin\resources\**\*.*">
+    <CommonDataFiles Include="$(SolutionDir)resources\**\*.*">
       <InProject>false</InProject>
     </CommonDataFiles>
   </ItemGroup>
@@ -316,9 +316,6 @@
       <DeploymentContent>true</DeploymentContent>
     </None>
     <None Include="xbsx2-uwp_TemporaryKey.pfx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="resources\game_controller_db.txt" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="resources\fonts\bold.ttf" />

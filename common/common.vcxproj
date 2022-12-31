@@ -69,72 +69,21 @@
     <ClCompile Include="FastJmp.cpp">
       <ExcludedFromBuild>true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="GL\Context.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="GL\ContextWGL.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="GL\Program.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="GL\ShaderCache.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="GL\StreamBuffer.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="FileSystem.cpp" />
     <ClCompile Include="Image.cpp" />
     <ClCompile Include="MD5Digest.cpp" />
     <ClCompile Include="MemorySettingsInterface.cpp" />
     <ClCompile Include="ProgressCallback.cpp" />
-    <ClCompile Include="StackWalker.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="StringUtil.cpp" />
     <ClCompile Include="SettingsWrapper.cpp" />
     <ClCompile Include="TextureDecompress.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="VirtualMemory.cpp" />
-    <ClCompile Include="Vulkan\vk_mem_alloc.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Vulkan\Builders.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Vulkan\Context.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Vulkan\Loader.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Vulkan\ShaderCache.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Vulkan\ShaderCompiler.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Vulkan\StreamBuffer.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Vulkan\SwapChain.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Vulkan\Texture.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="Vulkan\Util.cpp">
-      <ExcludedFromBuild Condition="$(Configuration.Contains(UWP))">true</ExcludedFromBuild>
-    </ClCompile>
     <ClCompile Include="WindowInfo.cpp" />
     <ClCompile Include="Perf.cpp" />
     <ClCompile Include="PrecompiledHeader.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Linux\LnxHostSys.cpp" />
-    <ClCompile Include="Linux\LnxMisc.cpp" />
-    <ClCompile Include="Linux\LnxThreads.cpp" />
     <ClCompile Include="Windows\WinHostSys.cpp" />
     <ClCompile Include="Windows\WinMisc.cpp" />
     <ClCompile Include="Windows\WinThreads.cpp" />
@@ -156,7 +105,6 @@
   <ItemGroup>
     <None Include="EventSource.inl" />
     <MASM Include="FastJmp.asm" />
-    <None Include="Vulkan\EntryPoints.inl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Align.h" />
@@ -175,11 +123,6 @@
     <ClInclude Include="Easing.h" />
     <ClInclude Include="boost_spsc_queue.hpp" />
     <ClInclude Include="FastJmp.h" />
-    <ClInclude Include="GL\Context.h" />
-    <ClInclude Include="GL\ContextWGL.h" />
-    <ClInclude Include="GL\Program.h" />
-    <ClInclude Include="GL\ShaderCache.h" />
-    <ClInclude Include="GL\StreamBuffer.h" />
     <ClInclude Include="FileSystem.h" />
     <ClInclude Include="HashCombine.h" />
     <ClInclude Include="HeterogeneousContainers.h" />
@@ -189,7 +132,6 @@
     <ClInclude Include="MemorySettingsInterface.h" />
     <ClInclude Include="ProgressCallback.h" />
     <ClInclude Include="ScopedGuard.h" />
-    <ClInclude Include="StackWalker.h" />
     <ClInclude Include="StringUtil.h" />
     <ClInclude Include="SettingsInterface.h" />
     <ClInclude Include="SettingsWrapper.h" />
@@ -206,16 +148,6 @@
     <ClInclude Include="SafeArray.h" />
     <ClInclude Include="TextureDecompress.h" />
     <ClInclude Include="Timer.h" />
-    <ClInclude Include="Vulkan\Builders.h" />
-    <ClInclude Include="Vulkan\Context.h" />
-    <ClInclude Include="Vulkan\EntryPoints.h" />
-    <ClInclude Include="Vulkan\Loader.h" />
-    <ClInclude Include="Vulkan\ShaderCache.h" />
-    <ClInclude Include="Vulkan\ShaderCompiler.h" />
-    <ClInclude Include="Vulkan\StreamBuffer.h" />
-    <ClInclude Include="Vulkan\SwapChain.h" />
-    <ClInclude Include="Vulkan\Texture.h" />
-    <ClInclude Include="Vulkan\Util.h" />
     <ClInclude Include="WindowInfo.h" />
     <ClInclude Include="Threading.h" />
     <ClInclude Include="emitter\implement\bmi.h" />
@@ -248,12 +180,6 @@
   <ItemGroup>
     <ProjectReference Include="..\3rdparty\d3d12memalloc\d3d12memalloc.vcxproj">
       <Project>{d45cec7a-3171-40dd-975d-e1544cf16139}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\3rdparty\glad\glad.vcxproj" Condition="!$(Configuration.Contains(UWP))">
-      <Project>{c0293b32-5acf-40f0-aa6c-e6da6f3bf33a}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\3rdparty\glslang\glslang.vcxproj" Condition="!$(Configuration.Contains(UWP))">
-      <Project>{ef6834a9-11f3-4331-bc34-21b325abb180}</Project>
     </ProjectReference>
     <ProjectReference Include="..\3rdparty\jpgd\jpgd.vcxproj">
       <Project>{ed2f21fd-0a36-4a8f-9b90-e7d92a2acb63}</Project>

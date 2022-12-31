@@ -385,16 +385,7 @@ PINEServer::IPCBuffer PINEServer::ParseCommand(char* buf, char* ret_buffer, u32 
 				if (!m_vm->HasActiveMachine())
 					goto error;
 				char version[256] = {};
-				if (GIT_TAGGED_COMMIT) // Nightly builds
-				{
-					// tagged commit - more modern implementation of dev build versioning
-					// - there is no need to include the commit - that is associated with the tag, git is implied
-					sprintf(version, "XBSX2 Nightly - %s", GIT_TAG);
-				}
-				else
-				{
-					sprintf(version, "XBSX2 %u.%u.%u-%lld", XBSX2_VersionHi, XBSX2_VersionMid, XBSX2_VersionLo, SVN_REV);
-				}
+					sprintf(version, "XBSX2 %u.%u-%lld", XBSX2_VersionHi, XBSX2_VersionMid, GIT_HASH);
 				const u32 size = strlen(version) + 1;
 				version[size] = 0x00;
 				if (!SafetyChecks(buf_cnt, 0, ret_cnt, size + 4, buf_size))

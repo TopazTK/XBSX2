@@ -16,17 +16,15 @@
 #pragma once
 
 #define XBSX2_VersionHi     1
-#define XBSX2_VersionMid    7
-#define XBSX2_VersionLo     0
+#define XBSX2_VersionMid    0
 
 #define STRINGIZE2(s) #s
 #define STRINGIZE(s) STRINGIZE2(s)
 
 #define VER_FILE_DESCRIPTION_STR    "XBSX2 PS2 Emulator"
-#define VER_FILE_VERSION            XBSX2_VersionHi, XBSX2_VersionMid, XBSX2_VersionLo, 0
+#define VER_FILE_VERSION            XBSX2_VersionHi, XBSX2_VersionMid, 0
 #define VER_FILE_VERSION_STR        STRINGIZE(XBSX2_VersionHi)        \
                                     "." STRINGIZE(XBSX2_VersionMid)    \
-                                    "." STRINGIZE(XBSX2_VersionLo) \
                                     "." STRINGIZE(0)    \
 
 #define VER_PRODUCTNAME_STR         "XBSX2"

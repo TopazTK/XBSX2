@@ -855,7 +855,7 @@ bool GameDatabase::checkAndLoad(const char* cached_filename, s64 expected_mtime)
 	std::string file_version;
 	if (!ReadU64(fp.get(), &file_signature) || file_signature != CACHE_FILE_MAGIC ||
 		!ReadS64(fp.get(), &file_mtime) || file_mtime != expected_mtime ||
-		!ReadString(fp.get(), &file_version) || file_version != GIT_REV ||
+		!ReadString(fp.get(), &file_version) || file_version != GIT_HASH ||
 		(start_pos = FileSystem::FTell64(fp.get())) < 0 || FileSystem::FSeek64(fp.get(), 0, SEEK_END) != 0 ||
 		(file_size = FileSystem::FTell64(fp.get())) < 0 || FileSystem::FSeek64(fp.get(), start_pos, SEEK_SET) != 0)
 	{
@@ -953,7 +953,7 @@ static bool SaveCache(const char* cached_filename, s64 mtime)
 	if (!fp)
 		return false;
 
-	if (!WriteU64(fp.get(), CACHE_FILE_MAGIC) || !WriteS64(fp.get(), mtime) || !WriteString(fp.get(), GIT_REV))
+	if (!WriteU64(fp.get(), CACHE_FILE_MAGIC) || !WriteS64(fp.get(), mtime) || !WriteString(fp.get(), GIT_HASH))
 		return false;
 
 	for (const auto& it : s_game_db)

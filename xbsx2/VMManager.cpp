@@ -1939,10 +1939,10 @@ DEFINE_HOTKEY("ToggleSlowMotion", "2. Emulator", "Toggle Slow Motion", [](s32 pr
 //  	if (!pressed&& VMManager::HasValidVM())
 //  		HotkeyAdjustTargetSpeed(-0.1);
 //  })
-//  DEFINE_HOTKEY("ShutdownVM", "System", "Shut Down Virtual Machine", [](s32 pressed) {
-//		if (!pressed && VMManager::HasValidVM())
-//  		Host::RequestVMShutdown(true, true, EmuConfig.SaveStateOnShutdown);
-//	})
+DEFINE_HOTKEY("ShutdownVM", "2. Emulator", "Quit XBSX2", [](s32 pressed) {
+	if (!pressed && VMManager::HasValidVM())
+ 		Host::RequestExit(false);
+})
 //  DEFINE_HOTKEY("ResetVM", "System", "Reset Virtual Machine", [](s32 pressed) {
 //  	if (!pressed && VMManager::HasValidVM())
 //  		VMManager::Reset();

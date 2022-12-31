@@ -253,10 +253,6 @@ namespace FullscreenUI
 	static void DoStartPath(const std::string& path, std::optional<s32> state_index = std::nullopt, std::optional<bool> fast_boot = std::nullopt);
 	static void DoStartFile();
 	static void DoStartBIOS();
-#ifndef _UWP
-	static void DoStartDisc(const std::string& drive);
-	static void DoStartDisc();
-#endif
 	static void DoToggleFrameLimit();
 	static void DoToggleSoftwareRenderer();
 	static void DoShutdown(bool save_state);
@@ -855,51 +851,6 @@ void FullscreenUI::DoStartBIOS()
 	s_current_main_window = MainWindowType::None;
 }
 
-#ifndef _UWP
-void FullscreenUI::DoStartDisc(const std::string& drive)
-{
-	Host::RunOnCPUThread([drive]() {
-		if (VMManager::HasValidVM())
-			return;
-
-		VMBootParameters params;
-		params.filename = std::move(drive);
-		params.source_type = CDVD_SourceType::Disc;
-		if (VMManager::Initialize(params))
-			VMManager::SetState(VMState::Running);
-		else
-			SwitchToLanding();
-	});
-}
-
-void FullscreenUI::DoStartDisc()
-{
-	std::vector<std::string> devices(GetOpticalDriveList());
-	if (devices.empty())
-	{
-		ShowToast(std::string(),
-			"Could not find any CD/DVD-ROM devices. Please ensure you have a drive connected and sufficient permissions to access it.");
-		return;
-	}
-
-	// if there's only one, select it automatically
-	if (devices.size() == 1)
-	{
-		DoStartDisc(devices.front());
-		return;
-	}
-
-	ImGuiFullscreen::ChoiceDialogOptions options;
-	for (std::string& drive : devices)
-		options.emplace_back(std::move(drive), false);
-	OpenChoiceDialog(ICON_FA_COMPACT_DISC " Select Disc Drive", false, std::move(options), [](s32, const std::string& path, bool) {
-		DoStartDisc(path);
-		CloseChoiceDialog();
-		QueueResetFocus();
-	});
-}
-#endif
-
 void FullscreenUI::DoToggleFrameLimit()
 {
 	Host::RunOnCPUThread([]() {
@@ -998,7 +949,7 @@ void FullscreenUI::DrawLandingWindow()
 
 		ImGui::SetCursorPos(ImVec2(LayoutScale(20.0f), ImGui::GetWindowHeight() - g_medium_font->FontSize - LayoutScale(20.0f)));
 		ImGui::PushFont(g_medium_font);
-		ImGui::Text(GIT_REV);
+		ImGui::Text(GIT_HASH);
 		ImGui::PopFont();
 	}
 	EndFullscreenColumnWindow();
@@ -1018,13 +969,6 @@ void FullscreenUI::DrawLandingWindow()
 		{
 			DoStartBIOS();
 		}
-
-#ifndef _UWP
-		if (MenuButton(ICON_FA_COMPACT_DISC " Start Disc", "Start a game from a disc in your PC's DVD drive."))
-		{
-			DoStartDisc();
-		}
-#endif
 
 		if (MenuButton(ICON_FA_FOLDER_OPEN " Start Game", "Launch a game by selecting a file/disc image."))
 		{
@@ -2114,6 +2058,10 @@ void FullscreenUI::DrawInterfaceSettingsPage()
 	MenuHeading("Behaviour");
 	DrawToggleSetting(bsi, ICON_FA_WINDOW_MAXIMIZE " Pause On Menu",
 		"Pauses the emulator when you open the quick menu, and unpauses when you close it.", "UI", "PauseOnMenu", true);
+	DrawToggleSetting(bsi, ICON_FA_SAVE " Save State On Shutdown",
+		"Automatically saves the emulator state when powering down or exiting. You can then resume directly from where you left off next "
+		"time.",
+		"EmuCore", "SaveStateOnShutdown", false);
 	MenuHeading("Operations");
 	if (MenuButton(ICON_FA_FOLDER_MINUS " Reset Settings", "Resets configuration to default (excluding controller/hotkey settings).",
 			!IsEditingGameSettings(bsi)))
@@ -3064,29 +3012,10 @@ void FullscreenUI::DrawControllerSettingsPage()
 			ResetControllerSettings();
 	}
 
-#ifndef _UWP // Not currently working.
 	if (MenuButton(ICON_FA_FOLDER_OPEN " Load Profile", "Replaces these settings with a previously saved input profile."))
 		DoLoadInputProfile();
 	if (MenuButton(ICON_FA_SAVE " Save Profile", "Stores the current settings to an input profile."))
 		DoSaveInputProfile();
-#endif
-
-#ifndef _UWP
-
-	MenuHeading("Input Sources");
-
-#ifdef SDL_BUILD
-	DrawToggleSetting(bsi,
-		ICON_FA_COG " Enable SDL Input Source", "The SDL input source supports most controllers.", "InputSources", "SDL", true, true, false);
-	DrawToggleSetting(bsi, ICON_FA_WIFI " SDL DualShock 4 / DualSense Enhanced Mode",
-		"Provides vibration and LED control support over Bluetooth.", "InputSources", "SDLControllerEnhancedMode", false,
-		bsi->GetBoolValue("InputSources", "SDL", true), false);
-#endif
-#ifdef _WIN32
-	DrawToggleSetting(bsi, ICON_FA_COG " Enable XInput Input Source",
-		"The XInput source provides support for XBox 360/XBox One/XBox Series controllers.", "InputSources", "XInput", false, true, false);
-#endif
-#endif
 
 	MenuHeading("Multitap");
 	DrawToggleSetting(bsi, ICON_FA_PLUS_SQUARE " Enable Console Port 1 Multitap",

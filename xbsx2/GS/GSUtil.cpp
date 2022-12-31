@@ -19,15 +19,11 @@
 #include "GSUtil.h"
 #include "common/StringUtil.h"
 
-#ifdef _WIN32
 #include <VersionHelpers.h>
-#include "svnrev.h"
 #include "Renderers/DX11/D3D.h"
 #include <wil/com.h>
-#else
 #define SVN_REV 0
 #define SVN_MODS 0
-#endif
 
 Xbyak::util::Cpu g_cpu;
 

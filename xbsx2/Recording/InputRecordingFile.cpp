@@ -35,7 +35,7 @@ void InputRecordingFileHeader::Init()
 
 void InputRecordingFileHeader::SetEmulatorVersion()
 {
-	wxString emuVersion = wxString::Format("%s-%d.%d.%d", pxGetAppName().c_str(), XBSX2_VersionHi, XBSX2_VersionMid, XBSX2_VersionLo);
+	wxString emuVersion = wxString::Format("%s-%d.%d", pxGetAppName().c_str(), XBSX2_VersionHi, XBSX2_VersionMid);
 	int max = std::size(emu) - 1;
 	strncpy(emu, emuVersion.c_str(), max);
 	emu[max] = 0;
@@ -250,7 +250,7 @@ void InputRecordingFileHeader::Init()
 
 void InputRecordingFileHeader::SetEmulatorVersion()
 {
-	std::string emuVersion = fmt::format("XBSX2-{}.{}.{}", XBSX2_VersionHi, XBSX2_VersionMid, XBSX2_VersionLo);
+	std::string emuVersion = fmt::format("XBSX2-{}.{}", XBSX2_VersionHi, XBSX2_VersionMid);
 	int max = std::size(emu) - 1;
 	strncpy(emu, emuVersion.c_str(), max);
 	emu[max] = 0;

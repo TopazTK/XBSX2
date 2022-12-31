@@ -143,32 +143,7 @@ Xbsx2Config EmuConfig;
 // This function should be called once during program execution.
 void SysLogMachineCaps()
 {
-	if ( !XBSX2_isReleaseVersion )
-	{
-		if (GIT_TAGGED_COMMIT) // Nightly builds
-		{
-			// tagged commit - more modern implementation of dev build versioning
-			// - there is no need to include the commit - that is associated with the tag, 
-			// - git is implied and the tag is timestamped
-			Console.WriteLn(Color_StrongGreen, "XBSX2 Nightly - %s Compiled on %s", GIT_TAG, __DATE__);
-		} else {
-			Console.WriteLn(Color_StrongGreen, "XBSX2 %u.%u.%u-%lld"
-#ifndef DISABLE_BUILD_DATE
-											   "- compiled on " __DATE__
-#endif
-				,
-				XBSX2_VersionHi, XBSX2_VersionMid, XBSX2_VersionLo,
-				SVN_REV);
-		}
-	}
-	else { // shorter release version string
-		Console.WriteLn(Color_StrongGreen, "XBSX2 %u.%u.%u-%lld"
-#ifndef DISABLE_BUILD_DATE
-			"- compiled on " __DATE__
-#endif
-			, XBSX2_VersionHi, XBSX2_VersionMid, XBSX2_VersionLo,
-			SVN_REV );
-	}
+	Console.WriteLn(Color_StrongGreen, "XBSX2 %u.%u-%lld", XBSX2_VersionHi, XBSX2_VersionMid, GIT_HASH);
 
 	Console.WriteLn( "Savestate version: 0x%x", g_SaveVersion);
 	Console.Newline();

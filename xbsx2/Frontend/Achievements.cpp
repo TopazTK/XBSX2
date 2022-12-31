@@ -394,12 +394,7 @@ void Achievements::ClearGameHash()
 std::string Achievements::GetUserAgent()
 {
 	std::string ret;
-	if (!PCSX2_isReleaseVersion && GIT_TAGGED_COMMIT)
-		ret = fmt::format("PCSX2 Nightly - {} ({})", GIT_TAG, GetOSVersionString());
-	else if (!PCSX2_isReleaseVersion)
-		ret = fmt::format("PCSX2 {} ({})", GIT_REV, GetOSVersionString());
-	else
-		ret = fmt::format("PCSX2 {}.{}.{}-{} ({})", PCSX2_VersionHi, PCSX2_VersionMid, PCSX2_VersionLo, SVN_REV, GetOSVersionString());
+		ret = fmt::format("PCSX2 {}.{}-{} ({})", XBSX2_VersionHi, XBSX2_VersionMid, XBSX2_VersionLo, GIT_HASH, GetOSVersionString());
 
 	return ret;
 }
@@ -1970,7 +1965,7 @@ void Achievements::SwitchToRAIntegration()
 
 void Achievements::RAIntegration::InitializeRAIntegration(void* main_window_handle)
 {
-	RA_InitClient((HWND)main_window_handle, "PCSX2", GIT_TAG);
+	RA_InitClient((HWND)main_window_handle, "XBSX2", GIT_HASH);
 	RA_SetUserAgentDetail(Achievements::GetUserAgent().c_str());
 
 	RA_InstallSharedFunctions(RACallbackIsActive, RACallbackCauseUnpause, RACallbackCausePause, RACallbackRebuildMenu,

@@ -307,19 +307,15 @@ void NoGUIHost::SavePlatformWindowGeometry(s32 x, s32 y, s32 width, s32 height)
 std::string NoGUIHost::GetAppNameAndVersion()
 {
 	std::string ret;
-	if constexpr (!XBSX2_isReleaseVersion && GIT_TAGGED_COMMIT)
-	{
-		ret = "XBSX2 Nightly - " GIT_TAG;
-	}
-	else if constexpr (XBSX2_isReleaseVersion)
+	if constexpr (XBSX2_isReleaseVersion)
 	{
 #define APPNAME_STRINGIZE(x) #x
-		ret = "XBSX2 " APPNAME_STRINGIZE(XBSX2_VersionHi) "." APPNAME_STRINGIZE(XBSX2_VersionMid) "." APPNAME_STRINGIZE(XBSX2_VersionLo);
+		ret = "XBSX2 " APPNAME_STRINGIZE(XBSX2_VersionHi) "." APPNAME_STRINGIZE(XBSX2_VersionMid) "-" GIT_HASH;
 #undef APPNAME_STRINGIZE
 	}
 	else
 	{
-		return "XBSX2 " GIT_REV;
+		return "XBSX2 - " GIT_HASH;
 	}
 
 	return ret;
@@ -329,8 +325,6 @@ std::string NoGUIHost::GetAppConfigSuffix()
 {
 #if defined(XBSX2_DEBUG)
 	return " [Debug]";
-#elif defined(XBSX2_DEVBUILD)
-	return " [Devel]";
 #else
 	return std::string();
 #endif

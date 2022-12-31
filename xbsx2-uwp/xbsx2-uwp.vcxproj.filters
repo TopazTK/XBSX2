@@ -363,15 +363,14 @@
     <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="resources\game_controller_db.txt">
-      <Filter>resources</Filter>
-    </Text>
-  </ItemGroup>
-  <ItemGroup>
     <Font Include="resources\fonts\fa-solid-900.ttf">
       <Filter>resources\fonts</Filter>
     </Font>
-    <Font Include="resources\fonts\bold.ttf" />
-    <Font Include="resources\fonts\regular.ttf" />
+    <Font Include="resources\fonts\bold.ttf">
+      <Filter>resources\fonts</Filter>
+    </Font>
+    <Font Include="resources\fonts\regular.ttf">
+      <Filter>resources\fonts</Filter>
+    </Font>
   </ItemGroup>
 </Project>
