@@ -223,6 +223,9 @@
     <Filter Include="Tools\Input Recording">
       <UniqueIdentifier>{03ba2aa7-2cd9-48cb-93c6-fc93d5bdc938}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Misc\LuaEngine">
+      <UniqueIdentifier>{df29a64a-1c5f-4111-be66-068df189c059}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="Utilities\folderdesc.txt">
@@ -1171,6 +1174,12 @@
     <ClCompile Include="Frontend\CommonHost.cpp">
       <Filter>Host</Filter>
     </ClCompile>
+    <ClCompile Include="LuaEngine\LuaEngine.cpp">
+      <Filter>Misc\LuaEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaEngine\LuaPS2.cpp">
+      <Filter>Misc\LuaEngine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Patch.h">
@@ -1984,5 +1993,11 @@
     </ClInclude>
     <ClInclude Include="svnrev.h" />
     <ClInclude Include="Frontend\CommonHost.h" />
+    <ClInclude Include="LuaEngine\LuaEngine.h">
+      <Filter>Misc\LuaEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaEngine\LuaPS2.h">
+      <Filter>Misc\LuaEngine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

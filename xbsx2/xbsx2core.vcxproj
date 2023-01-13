@@ -53,7 +53,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\libzip;$(SolutionDir)3rdparty\libzip\libzip\lib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories>$(SolutionDir)3rdparty\d3d12memalloc\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SolutionDir)3rdparty\zstd\zstd\lib</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SolutionDir)3rdparty\cpuinfo\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(SolutionDir)3rdparty\cpuinfo\include;$(SolutionDir)3rdparty\lua\src;$(SolutionDir)3rdparty\sol3</AdditionalIncludeDirectories>
       <ExceptionHandling>Async</ExceptionHandling>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>PrecompiledHeader.h</PrecompiledHeaderFile>
@@ -202,6 +202,8 @@
     <ClCompile Include="HostDisplay.cpp" />
     <ClCompile Include="Frontend\HostSettings.cpp" />
     <ClCompile Include="IopGte.cpp" />
+    <ClCompile Include="LuaEngine\LuaEngine.cpp" />
+    <ClCompile Include="LuaEngine\LuaPS2.cpp" />
     <ClCompile Include="PAD\Host\KeyStatus.cpp" />
     <ClCompile Include="PAD\Host\PAD.cpp" />
     <ClCompile Include="PAD\Host\StateManagement.cpp" />
@@ -490,6 +492,8 @@
     <ClInclude Include="HostDisplay.h" />
     <ClInclude Include="HostSettings.h" />
     <ClInclude Include="IopGte.h" />
+    <ClInclude Include="LuaEngine\LuaEngine.h" />
+    <ClInclude Include="LuaEngine\LuaPS2.h" />
     <ClInclude Include="PAD\Gamepad.h" />
     <ClInclude Include="PAD\Host\Global.h" />
     <ClInclude Include="PAD\Host\KeyStatus.h" />
@@ -720,6 +724,9 @@
     </ProjectReference>
     <ProjectReference Include="..\3rdparty\cpuinfo\cpuinfo.vcxproj">
       <Project>{7e183337-a7e9-460c-9d3d-568bc9f9bcc1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\3rdparty\lua\lua-uwp\lua-uwp.vcxproj">
+      <Project>{93b8da2c-888e-40c4-8e9e-5f31b53949e0}</Project>
     </ProjectReference>
     <ProjectReference Include="..\common\common.vcxproj">
       <Project>{4639972e-424e-4e13-8b07-ca403c481346}</Project>
