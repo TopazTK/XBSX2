@@ -956,6 +956,7 @@ struct Xbsx2Config
 		CdvdShareWrite : 1, // allows the iso to be modified while it's loaded
 		EnablePatches : 1, // enables patch detection and application
 		EnableCheats : 1, // enables cheat detection and application
+		EnableLuaEngine : 1, // enables LuaEngine.
 		EnablePINE : 1, // enables inter-process communication
 		EnableWideScreenPatches : 1,
 		EnableDeinterlacingPatches : 1,
@@ -1055,6 +1056,7 @@ namespace EmuFolders
 	extern std::string Langs;
 	extern std::string Logs;
 	extern std::string Cheats;
+	extern std::string Scripts;
 	extern std::string WidescreenPatches;
 	extern std::string DeinterlacingPatches;
 	extern std::string Resources;

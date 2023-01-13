@@ -2122,6 +2122,7 @@ void FullscreenUI::DrawEmulationSettingsPage()
 	MenuHeading("Game Settings");
 
 	DrawToggleSetting(bsi, "Enable Cheats", "Enables loading cheats from pnach files.", "EmuCore", "EnableCheats", false);
+	DrawToggleSetting(bsi, "Enable LuaEngine", "Enables the LuaEngine, allowing Lua files to be executed.", "EmuCore", "EnableLuaEngine", false);
 	DrawToggleSetting(bsi, "Enable Widescreen Patches", "Enables loading widescreen patches from pnach files.", "EmuCore", "EnableWideScreenPatches", false);
 	DrawToggleSetting(bsi, "Enable Deinterlacing Patches", "Enables loading deinterlacing patches from pnach files.", "EmuCore",
 		"EnableDeinterlacingPatches", false);
@@ -3281,6 +3282,7 @@ void FullscreenUI::DrawDirectorySettingsPage()
 	DrawFolderSetting(bsi, ICON_FA_FOLDER_OPEN " BIOS", "Folders", "Bios", EmuFolders::Bios);
 	DrawFolderSetting(bsi, ICON_FA_FOLDER_OPEN " Cache", "Folders", "Cache", EmuFolders::Cache);
 	DrawFolderSetting(bsi, ICON_FA_FOLDER_OPEN " Cheats", "Folders", "Cheats", EmuFolders::Cheats);
+	DrawFolderSetting(bsi, ICON_FA_FOLDER_OPEN " Scripts", "Folders", "Scripts", EmuFolders::Scripts);
 	DrawFolderSetting(bsi, ICON_FA_FOLDER_OPEN " Covers", "Folders", "Covers", EmuFolders::Covers);
 	DrawFolderSetting(bsi, ICON_FA_FOLDER_OPEN " Deinterlacing Patches", "Folders", "DeinterlacingPatches", EmuFolders::DeinterlacingPatches);
 	DrawFolderSetting(bsi, ICON_FA_FOLDER_OPEN " Game Settings", "Folders", "GameSettings", EmuFolders::GameSettings);

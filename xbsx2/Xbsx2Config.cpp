@@ -43,6 +43,7 @@ namespace EmuFolders
 	std::string Langs;
 	std::string Logs;
 	std::string Cheats;
+	std::string Scripts;
 	std::string WidescreenPatches;
 	std::string DeinterlacingPatches;
 	std::string Resources;
@@ -1066,6 +1067,8 @@ void Xbsx2Config::LoadSave(SettingsWrapper& wrap)
 	SettingsWrapBitBool(CdvdShareWrite);
 	SettingsWrapBitBool(EnablePatches);
 	SettingsWrapBitBool(EnableCheats);
+	SettingsWrapBitBool(EnableLuaEngine);
+
 	SettingsWrapBitBool(EnablePINE);
 	SettingsWrapBitBool(EnableWideScreenPatches);
 	SettingsWrapBitBool(EnableDeinterlacingPatches);
@@ -1223,6 +1226,8 @@ void Xbsx2Config::CopyConfig(const Xbsx2Config& cfg)
 	CdvdShareWrite = cfg.CdvdShareWrite;
 	EnablePatches = cfg.EnablePatches;
 	EnableCheats = cfg.EnableCheats;
+	EnableLuaEngine = cfg.EnableLuaEngine;
+
 	EnablePINE = cfg.EnablePINE;
 	EnableWideScreenPatches = cfg.EnableWideScreenPatches;
 	EnableDeinterlacingPatches = cfg.EnableDeinterlacingPatches;
@@ -1269,6 +1274,7 @@ void EmuFolders::SetDefaults(SettingsInterface& si)
 	si.SetStringValue("Folders", "MemoryCards", "memcards");
 	si.SetStringValue("Folders", "Logs", "logs");
 	si.SetStringValue("Folders", "Cheats", "cheats");
+	si.SetStringValue("Folders", "Scripts", "scripts");
 	si.SetStringValue("Folders", "WidescreenPatches", "widescreenpatches");
 	si.SetStringValue("Folders", "DeinterlacingPatches", "deinterlacingpatches");
 	si.SetStringValue("Folders", "Covers", "covers");
@@ -1294,6 +1300,8 @@ void EmuFolders::LoadConfig(SettingsInterface& si)
 	MemoryCards = LoadPathFromSettings(si, DataRoot, "MemoryCards", "memcards");
 	Logs = LoadPathFromSettings(si, DataRoot, "Logs", "logs");
 	Cheats = LoadPathFromSettings(si, DataRoot, "Cheats", "cheats");
+	Scripts = LoadPathFromSettings(si, DataRoot, "Scripts", "scripts");
+
 	WidescreenPatches = LoadPathFromSettings(si, DataRoot, "WidescreenPatches", "widescreenpatches");
 	DeinterlacingPatches = LoadPathFromSettings(si, DataRoot, "DeinterlacingPatches", "deinterlacingpatches");
 	Covers = LoadPathFromSettings(si, DataRoot, "Covers", "covers");
@@ -1326,6 +1334,7 @@ bool EmuFolders::EnsureFoldersExist()
 	result = FileSystem::CreateDirectoryPath(MemoryCards.c_str(), false) && result;
 	result = FileSystem::CreateDirectoryPath(Logs.c_str(), false) && result;
 	result = FileSystem::CreateDirectoryPath(Cheats.c_str(), false) && result;
+	result = FileSystem::CreateDirectoryPath(Scripts.c_str(), false) && result;
 	result = FileSystem::CreateDirectoryPath(WidescreenPatches.c_str(), false) && result;
 	result = FileSystem::CreateDirectoryPath(DeinterlacingPatches.c_str(), false) && result;
 	result = FileSystem::CreateDirectoryPath(Covers.c_str(), false) && result;

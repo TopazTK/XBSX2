@@ -30,6 +30,8 @@
 #include "common/Threading.h"
 #include "fmt/core.h"
 
+#include "LuaEngine/LuaEngine.h"
+
 #include "Counters.h"
 #include "CDVD/CDVD.h"
 #include "DEV9/DEV9.h"
@@ -543,6 +545,17 @@ void VMManager::LoadPatches(const std::string& serial, u32 crc, bool show_messag
 		}
 	}
 
+	// the luaengine
+	int script_count = 0;
+	if (EmuConfig.EnableLuaEngine)
+	{
+		script_count = LoadScriptFromDir(crc_string, EmuFolders::Scripts, "Scripts");
+		if (script_count > 0)
+		{
+			PatchesCon->WriteLn(Color_Green, "LuaEngine Scripts Loaded: %d", script_count);
+		}
+	}
+
 	// wide screen patches
 	if (EmuConfig.EnableWideScreenPatches && crc != 0)
 	{
@@ -989,6 +1002,7 @@ bool VMManager::Initialize(VMBootParameters boot_params)
 	memBindConditionalHandlers();
 
 	ForgetLoadedPatches();
+	ForgetScripts();
 	gsUpdateFrequency(EmuConfig);
 	frameLimitReset();
 	cpuReset();
@@ -1072,6 +1086,7 @@ void VMManager::Shutdown(bool save_resume_state)
 #endif
 
 	ForgetLoadedPatches();
+	ForgetScripts();
 	R3000A::ioman::reset();
 	USBclose();
 	SPU2close();
@@ -1457,6 +1472,7 @@ void VMManager::Internal::EntryPointCompilingOnCPUThread()
 	// point is in the patch (e.g. WRC 4). So. Gross, but the only way to handle it really.
 	LoadPatches(SysGetDiscID(), ElfCRC, true, false);
 	ApplyLoadedPatches(PPT_ONCE_ON_LOAD);
+	ExecuteScript(SPT_ONCE_ON_LOAD);
 }
 
 void VMManager::Internal::GameStartingOnCPUThread()
@@ -1464,6 +1480,7 @@ void VMManager::Internal::GameStartingOnCPUThread()
 	UpdateRunningGame(false, true);
 	ApplyLoadedPatches(PPT_ONCE_ON_LOAD);
 	ApplyLoadedPatches(PPT_COMBINED_0_1);
+	ExecuteScript(SPT_CONTINOUSLY);
 }
 
 void VMManager::Internal::VSyncOnCPUThread()
@@ -1471,6 +1488,8 @@ void VMManager::Internal::VSyncOnCPUThread()
 	// TODO: Move frame limiting here to reduce CPU usage after sleeping...
 	ApplyLoadedPatches(PPT_CONTINUOUSLY);
 	ApplyLoadedPatches(PPT_COMBINED_0_1);
+	ExecuteScript(SPT_CONTINOUSLY);
+
 
 	// Frame advance must be done *before* pumping messages, because otherwise
 	// we'll immediately reduce the counter we just set.
